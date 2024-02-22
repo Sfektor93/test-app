@@ -1,0 +1,30 @@
+.container {
+  display: table;
+  border-spacing: 10px;
+  display: flex;
+  column-gap: 10px;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  display: table-cell;
+  flex: 1 1 33.333%;
+  border: 1px solid black;
+  padding: 10px;
+
+  @media (max-width: 767px) {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 10px
+    }
+  }
+
+  @media (max-width: 425px) {
+    flex: 1 1 100%;
+  }
+}
