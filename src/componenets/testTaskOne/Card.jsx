@@ -1,7 +1,17 @@
+import { useRef, useState, useLayoutEffect } from "react";
 import { response } from "./response";
 import style from "./Card.module.scss";
 
 const Card = () => {
+  const componentList = useRef();
+  const [height, setHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    setHeight(componentList.current.getBoundingClientRect().height);
+  }, []);
+
+  console.log(height);
+
   return (
     <>
       <div className={style.container}>
@@ -9,7 +19,7 @@ const Card = () => {
           return (
             <div className={style.card} key={header + index}>
               <h3>{header}</h3>
-              <ul>
+              <ul ref={componentList} style={{ minHeight: height + "px" }}>
                 {options.map((el, index) => (
                   <li key={el + index}>{el}</li>
                 ))}

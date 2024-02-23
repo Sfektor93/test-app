@@ -5,8 +5,6 @@ const App = () => {
   return (
     <div className="App">
       <TestTaskOne />
-      <hr />
-      <hr />
     </div>
   );
 };
