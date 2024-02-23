@@ -1,5 +1,5 @@
 import { useRef, useState, useLayoutEffect } from "react";
-import { response } from "./response";
+import { response } from "../services/response";
 import style from "./Card.module.scss";
 
 const Card = () => {
@@ -9,8 +9,6 @@ const Card = () => {
   useLayoutEffect(() => {
     setHeight(componentList.current.getBoundingClientRect().height);
   }, []);
-
-  console.log(height);
 
   return (
     <>
