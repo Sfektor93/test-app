@@ -1,0 +1,30 @@
+.title {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.header {
+  text-align: center;
+  background-color: grey;
+  height: 50px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+
+  :not(:last-child) {
+    margin-right: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    position: relative;
+    top: 30%;
+    color: blue;
+
+    &:hover {
+      color: white;
+      text-decoration: underline;
+      transition: all 0.2s;
+    }
+  }
+}

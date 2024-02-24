@@ -1,0 +1,14 @@
+.list {
+  position: relative;
+}
+
+.infoButton {
+  padding: 0;
+
+  @media (min-width: 767px) {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(0, -50%);
+  }
+}

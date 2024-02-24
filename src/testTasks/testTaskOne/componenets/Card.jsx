@@ -13,19 +13,17 @@ const Card = () => {
   return (
     <>
       <div className={style.container}>
-        {response.map(({ header, options, text }, index) => {
-          return (
-            <div className={style.card} key={header + index}>
-              <h3>{header}</h3>
-              <ul ref={componentList} style={{ minHeight: height + "px" }}>
-                {options.map((el, index) => (
-                  <li key={el + index}>{el}</li>
-                ))}
-              </ul>
-              <p>{text}</p>
-            </div>
-          );
-        })}
+        {response.map(({ header, options, text }, index) => (
+          <div className={style.card} key={header + index}>
+            <h3>{header}</h3>
+            <ul ref={componentList} style={{ minHeight: height + "px" }}>
+              {options.map((el, index) => (
+                <li key={el + index}>{el}</li>
+              ))}
+            </ul>
+            <p>{text}</p>
+          </div>
+        ))}
       </div>
     </>
   );
