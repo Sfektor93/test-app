@@ -6,8 +6,10 @@ const Card = () => {
   const componentList = useRef();
   const [height, setHeight] = useState(0);
 
+  console.log(componentList.current.clientHeight);
+
   useLayoutEffect(() => {
-    setHeight(componentList.current.getBoundingClientRect().height);
+    setHeight(componentList.current.clientHeight);
   }, []);
 
   return (

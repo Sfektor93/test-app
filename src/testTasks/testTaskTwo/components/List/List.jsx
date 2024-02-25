@@ -11,30 +11,28 @@ const List = () => {
   const getInfo = (id) => dispatch(getSpecification(id));
 
   return (
-    <>
-      <ListAntd
-        size="small"
-        bordered
-        loading={status === "loading"}
-        dataSource={list}
-        pagination={{ defaultPageSize: 4, size: "small" }}
-        renderItem={(item) => (
-          <ListAntd.Item className={style.list}>
-            Вид ремонта: {item.name}
-            <br />
-            Цена: {item.price} ₽
-            <br />
-            <Link
-              className={style.infoButton}
-              onClick={() => getInfo(item.id)}
-              to={`/services/${item.id}`}
-            >
-              Открыть описание услуги
-            </Link>
-          </ListAntd.Item>
-        )}
-      />
-    </>
+    <ListAntd
+      size="small"
+      bordered
+      loading={status === "loading"}
+      dataSource={list}
+      pagination={{ defaultPageSize: 4, size: "small" }}
+      renderItem={(item) => (
+        <ListAntd.Item className={style.list}>
+          Вид ремонта: {item.name}
+          <br />
+          Цена: {item.price} ₽
+          <br />
+          <Link
+            className={style.infoButton}
+            onClick={() => getInfo(item.id)}
+            to={`/services/${item.id}`}
+          >
+            Открыть описание услуги
+          </Link>
+        </ListAntd.Item>
+      )}
+    />
   );
 };
 
